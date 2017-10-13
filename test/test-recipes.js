@@ -36,10 +36,10 @@ describe('Recipes', function() {
     });
   });
 
-// test strategy:
-//  1. make a POST request with data for a new item
-//  2. inspect response object and prove it has right
-//  status code and that the returned object has an `id`
+  // test strategy:
+  //  1. make a POST request with data for a new item
+  //  2. inspect response object and prove it has right
+  //  status code and that the returned object has an `id`
   it('Should create new item on POST', function(){
     const newRecipe = {
       'name': 'Fried Rice',
@@ -56,14 +56,14 @@ describe('Recipes', function() {
     });
   });
 
-// test strategy:
-//  1. initialize some update data (we won't have an `id` yet)
-//  2. make a GET request so we can get an item to update
-//  3. add the `id` to `updateData`
-//  4. Make a PUT request with `updateData`
-//  5. Inspect the response object to ensure it
-//  has right status code and that we get back an updated
-//  item with the right data in it.
+  // test strategy:
+  //  1. initialize some update data (we won't have an `id` yet)
+  //  2. make a GET request so we can get an item to update
+  //  3. add the `id` to `updateData`
+  //  4. Make a PUT request with `updateData`
+  //  5. Inspect the response object to ensure it
+  //  has right status code and that we get back an updated
+  //  item with the right data in it.
   it('Should update an exisiting item on PUT', function(){
     const updatedRecipe = {
       'name': 'Fried Rice',
@@ -76,16 +76,16 @@ describe('Recipes', function() {
       return chai.request(app)
       .put(`/recipes/${updatedRecipe.id}`)
       .send(updatedRecipe);
-      })
+    })
     .then(function(res) {
       res.should.have.status(204);
     });
   });
 
-// test strategy:
-//  1. GET a shopping list items so we can get ID of one
-//  to delete.
-//  2. DELETE an item and ensure we get back a status 204
+  // test strategy:
+  //  1. GET a shopping list items so we can get ID of one
+  //  to delete.
+  //  2. DELETE an item and ensure we get back a status 204
   it('Should delete an item on DELETE', function() {
     return chai.request(app)
     .get('/recipes')
@@ -104,20 +104,35 @@ describe('Recipes', function() {
       'name': 'Fried Rice'
     }
     return chai.request(app)
-    .post('/recipes')
+    .post('/recipes/x')
     .send(newErrorRecipe)
     .then(function(res) {
       console.log(res);
       res.should.have.status(400);
+    });
   });
-});
 
-  // it('Supplying incorrect ID should throw an error on DELETE', function() {
-  //   return chai.request(app)
-  //   .delete('/recipes/xyz')
-  //   .then(function(res) {
-  //     console.log(res);
-  //     res.should.be.an(Error);
-  //   });
-  // });
+  it('Supplying incorrect ID for updating a recipe should throw an error on PUT', function() {
+    const updatedErrorRecipe = {
+      'name': 'Fried Rice',
+      'ingredients': ['Rice', 'Soy Sauce', 'Egg', 'Sausage'
+      ],
+      'id': 'y'
+    }
+    return chai.request(app)
+    .put('/recipes')
+    .send(updatedErrorRecipe)
+    .then(function(res) {
+      res.should.have.status(400);
+    });
+  });
+
+// it('Supplying incorrect ID should throw an error on DELETE', function() {
+//   return chai.request(app)
+//   .delete('/recipes/xyz')
+//   .then(function(res) {
+//     console.log(res);
+//     res.should.be.an(Error);
+//   });
+// });
 });
