@@ -7,4 +7,4 @@ deploy:
   app: node-shopping-list-integration-tests
   on:
     repo: chang-steven/node-shopping-list-integration-tests
-deploy:app: mysterious-depths-79005
+deploy: mysterious-depths-79005
