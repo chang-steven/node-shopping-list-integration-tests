@@ -7,4 +7,4 @@ deploy:
   app: node-shopping-list-integration-tests
   on:
     repo: chang-steven/node-shopping-list-integration-tests
-deploy:app: https://git.heroku.com/mysterious-depths-79005.git
+deploy:app: mysterious-depths-79005
