@@ -4,7 +4,6 @@ deploy:
   provider: heroku
   api_key:
     secure: Dd7KsKPME+bgFlz6dsA1PbwtnGYjj+rEGxf+HLWRoTfDgxFJo2T4YaXmFOb5qtytJHTgHInSceNEYfVf8cZQqT+js8fWaUtfsJU7QLR5O2Oknt7GBRz1IX2uud7qAVb6pErURrWXcyc+E2TGsz5vQh46Oln2IYEd+MmGls8+OO574iDwiTFBtQHaiS3gXyLsWB/t/GQJv/bqRz1x6VqLceVwfIChAoe3iNOWuwtc4dD8WrSfgM9HJ5VdI+8Q2c0f58GQMenziUuVgggZ/d+n38HmZunMGoGqsNtv6ufcH4HvovFjNjwtd1qK07BWcUiUvnCnDQh0pwnqojU51ic0ArYA2rTBuVUZu86NWO5Xsc5+OlmkbFDrwiHYDMPtRILWqwU7ejI6yy2py8cRUDdzpyZZKb9dKzH4etpcD9x9w0wQZkHXjriKB3ZJT3VGtgSPxMprhKY3spP0scGvpXJsqMKNhuDH9dSwhIOANR3jjqBAusRqO9XeCn3Ar0+LbpzPfakWKyP/cT3gMUQiSv3aSt5g59g8pYwJTqxclrPoMUsHGQWv/coiUc/ChKHpmVXBcEE1fuATQGCGdoltheUwBIiy/xripZP05I3cvi6K/nNtUwuHm4gtW71gja1VOU8c41yPT8hAjUExz8rvVEVMXdJS7ClZiiST7RPD68aHzlk=
-  app: node-shopping-list-integration-tests
+  app: mysterious-depths-79005
   on:
     repo: chang-steven/node-shopping-list-integration-tests
-deploy: mysterious-depths-79005
