@@ -104,12 +104,12 @@ describe('Recipes', function() {
       'name': 'Fried Rice'
     }
     return chai.request(app)
-    .post('/recipes/x')
+    .post('/recipes/')
     .send(newErrorRecipe)
-    .then(function(res) {
-      console.log(res);
+    .catch(function(res) {
+      console.log(`I'm catching`);
       res.should.have.status(400);
-    });
+    })
   });
 
   it('Supplying incorrect ID for updating a recipe should throw an error on PUT', function() {
@@ -120,9 +120,9 @@ describe('Recipes', function() {
       'id': 'y'
     }
     return chai.request(app)
-    .put('/recipes')
+    .put('/recipes/x')
     .send(updatedErrorRecipe)
-    .then(function(res) {
+    .catch(function(res) {
       res.should.have.status(400);
     });
   });
